@@ -47,13 +47,10 @@
    </div>
    <br>
    <div >
-    <div v-for="p in filterpersonne" :class="{'forme': miseenforme}">
-      <img :src="p.picture[affichetailleimage]" alt="photo">
-      <p>{{ p.name.title }} {{ p.name.first }} {{ p.name.last }} - {{ p.location.country }}</p>
+    <div v-for="p in filtrepiece" class="form">
+      <img :src="p.image" alt="photo">
+      <p> {{ p.nom }} - prix: {{ p.prix }}DH - {{ p.categorie }}</p>
     
-      <div v-if="affichecontact">
-        <p>{{p.phone}} | {{p.email}} </p>
-    </div>
    </div>
     </div>
   </div>

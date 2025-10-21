@@ -210,20 +210,18 @@ createApp({
     afficheparcategorie: "",
     tri_prix: "Croissant",
 
-    };
+    }
   },
   computed:{
-      filterpiece(){
+      filtrepiece(){
           return this.pieces.filter(e=>{
-             const correspondpieces =
-          (this.affichehomme && e.gender === "male") ||
-          (this.affichefemme && e.gender === "female");
+             const disponiblepieces = ( e.disponible === true) 
+         
 
-        const correspondNom =
-          e.name.first.toLowerCase().includes(this.filtrerecherche.toLowerCase()) ||
-          e.name.last.toLowerCase().includes(this.filtrenom.toLowerCase());
+               const correspondRecherche=
+             e.nom.toLowerCase().includes(this.filtrerecherche.toLowerCase()) ;
 
-        return correspondGenre && correspondNom;
+        return disponiblepieces && correspondRecherche;
          })
       }
      

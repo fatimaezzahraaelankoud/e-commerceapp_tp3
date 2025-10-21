@@ -16,27 +16,33 @@
    </div>
    <label class="label1">Rechercher: 
     <input class="input" type="text" name="nom" v-model="filtrerecherche">
-    <button>OK</button>
    </label>
    <br>
    <div class="label2">
-   <label >Filtrer par: 
-    <br>
-    <label>Categorie:
-      <select v-model="aficheparcategorie">
-      <option value="Électricité">Électricité</option>
-      <option value="Filtration">Filtration</option>
-      <option value="Freinage">Freinage</option>
-      <option value="Refroidissement">Refroidissement</option>
-      <option value="Suspension">Suspension</option>
-      <option value="Sécurité">Sécurité</option>
-      <option value="Transmission">Transmission</option>
+   
+    <label> Filtrer par Categorie:
+      <select v-model="afficheparcategorie">
+  <option value="">Toutes les catégories</option>
+  <option value="Électricité">Électricité</option>
+  <option value="Filtration">Filtration</option>
+  <option value="Moteur">Moteur</option>
+  <option value="Freinage">Freinage</option>
+  <option value="Refroidissement">Refroidissement</option>
+  <option value="Suspension">Suspension</option>
+  <option value="Sécurité">Sécurité</option>
+  <option value="Transmission">Transmission</option>
+  <option value="Carrosserie">Carrosserie</option>
+  <option value="Échappement">Échappement</option>
+  <option value="Direction">Direction</option>
+  <option value="Carburant">Carburant</option>
+</select>
 
-
-      
-    </select></label>
-    <label>Mise en forme     
-      <input type="checkbox" v-model="miseenforme"></label>
+  </label>
+    <label>Trier par prix:  
+      <select v-model="tri_prix">
+      <option value="Croissant">Croissant</option>
+      <option value="Décroissant">Décroissant</option>
+      </select>
    </label>
    </div>
    <br>

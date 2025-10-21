@@ -34,7 +34,7 @@ createApp({
         "prix": 80,
         "categorie": "Freinage",
         "image" : " " ,
-        "disponible": true
+        "disponible": false
     },
     {
         "id": 5,
@@ -114,7 +114,7 @@ createApp({
         "prix": 110,
         "categorie": "Moteur",
         "image" : " " ,
-        "disponible": true
+        "disponible": false
     },
     {
         "id": 15,
@@ -130,7 +130,7 @@ createApp({
         "prix": 45,
         "categorie": "Sécurité",
          "image" : " " ,
-        "disponible": true
+        "disponible": false
     },
     {
         "id": 17,
@@ -207,24 +207,20 @@ createApp({
 ],
 
     filtrerecherche: "" ,
-    affichehomme:true ,
-    affichefemme:true ,
-    affichecontact:false ,
-    affichetailleimage: "medium",
-    miseenforme: false
+    afficheparcategorie: "",
+    tri_prix: "Croissant",
 
-    
     };
   },
   computed:{
       filterpiece(){
-          return this.personnes.filter(e=>{
+          return this.pieces.filter(e=>{
              const correspondpieces =
           (this.affichehomme && e.gender === "male") ||
           (this.affichefemme && e.gender === "female");
 
         const correspondNom =
-          e.name.first.toLowerCase().includes(this.filtrenom.toLowerCase()) ||
+          e.name.first.toLowerCase().includes(this.filtrerecherche.toLowerCase()) ||
           e.name.last.toLowerCase().includes(this.filtrenom.toLowerCase());
 
         return correspondGenre && correspondNom;

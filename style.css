@@ -61,3 +61,6 @@ img{
   gap: 20px;
 
 }
+.container img{
+  width: 30%;
+}

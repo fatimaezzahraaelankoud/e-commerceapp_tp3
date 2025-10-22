@@ -216,12 +216,11 @@ createApp({
       filtrepiece(){
           return this.pieces.filter(e=>{
              const disponiblepieces = ( e.disponible === true) 
-         
+             const correspondRecherche=(
+             e.nom.toLowerCase().includes(this.filtrerecherche.toLowerCase())&& (e.categorie===this.afficheparcategorie||this.afficheparcategorie === ""));
 
-               const correspondRecherche=
-             e.nom.toLowerCase().includes(this.filtrerecherche.toLowerCase()) ;
 
-        return disponiblepieces && correspondRecherche;
+              return disponiblepieces && correspondRecherche;
          })
       }
      

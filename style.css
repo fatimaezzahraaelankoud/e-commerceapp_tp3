@@ -30,13 +30,14 @@ label{
 }
 
 .forme{
-  border: 2px solid #5caf5e;
+  border: 1px solid #371cbf;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #fffcfc;
+  background-color: #e3e3e3;
   font-weight: bold;
-  width: 400px;
+  width: 90%;
+  text-align: center;
 
 }
 .header{
@@ -52,4 +53,11 @@ img{
     width:60px ;
     border-radius: 10px;
     
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+
 }

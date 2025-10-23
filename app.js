@@ -214,14 +214,19 @@ createApp({
   },
   computed:{
       filtrepiece(){
-          return this.pieces.filter(e=>{
-             const disponiblepieces = ( e.disponible === true) 
-             const correspondRecherche=(
-             e.nom.toLowerCase().includes(this.filtrerecherche.toLowerCase())&& (e.categorie===this.afficheparcategorie||this.afficheparcategorie === ""));
+          let result=this.pieces.filter(e=>
+            (e.disponible === true &&
+             e.nom.toLowerCase().includes(this.filtrerecherche.toLowerCase()) 
+             && (e.categorie===this.afficheparcategorie||this.afficheparcategorie === ""))
+        
+            )
+             if (this.tri_prix==="Croissant"){
+               result.sort((a,b)=>a.prix-b.prix);
+             }else{
+               result.sort((a,b)=>b.prix-a.prix);
+             }
 
-
-              return disponiblepieces && correspondRecherche;
-         })
+        return result
       }
      
   }
